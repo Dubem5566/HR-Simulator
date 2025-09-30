@@ -1,0 +1,344 @@
+class Hr() :
+    def __init__(self):
+        self.managers = ["Obinna","Philip"]
+        self.employees = ["Mary","Valentine","Amara","Faith","John"]
+        self.request_vacation = {}
+        self.request_leave = {}
+        self.request_overtime = {}
+        self.vacation_update = {}
+        self.leave_update = {}
+        self.overtime_update = {}
+
+    def login(self) :
+        user = input("Enter name: ").strip().title()
+        if user in self.managers or user in self.employees :
+            print("You are successfully logged in")
+        else :
+            print("Name doesn't exist!")
+    
+    def request_vac(self) :
+        user_name = input("Enter name: ").strip().title()
+        if user_name in self.managers or user_name in self.employees :
+            user = input("How long do you wanna take? ").strip()
+            if user_name in self.managers :
+                print("Vacation is approved")
+            elif user_name in self.employees :
+                self.request_vacation.update({user_name:user})
+                print("Request has been sent, kindly wait for approval")
+        else :
+            print("Name doesn't exist")
+            
+    def request_leav(self) :
+        user_name = input("Enter name: ").strip().title()
+        if user_name in self.managers or user_name in self.employees :
+            user = input("How long do you wanna take? ").strip()
+            if user_name in self.managers :
+                print("Leave is approved")
+            elif user_name in self.employees :
+                self.request_leave.update({user_name:user})
+                print("Request has been sent, kindly wait for approval")
+        else :
+            print("Name doesn't exist")
+
+    def request_over(self) :
+        user_name = input("Enter name: ").strip().title()
+        if user_name in self.managers or user_name in self.employees :
+            user = input("How long do you wanna take? ").strip()
+            if user_name in self.managers :
+                print("Overtime is approved")
+            elif user_name in self.employees :
+                self.request_overtime.update({user_name:user})
+                print("Request has been sent, kindly wait for approval")
+        else :
+            print("Name doesn't exist")
+    
+    def approve_vac(self) :
+        user_name = input("Enter name: ").strip().title()
+        if user_name in self.managers :
+            items = list(self.request_vacation.items())
+            if items[0] in items :
+                print(items[0])
+                user = input("Approve or reject: ").strip().lower()
+                if user == "approve" :
+                    self.vacation_update.update({items[0][0] : "Approved"})
+                    print("Request has been approved")
+                elif user == "reject" :
+                    self.vacation_update.update({items[0][0] : "Rejected"})
+                    print("Request has been rejected")
+                else :
+                    print("Invalid input")
+            elif items[1] in items :
+                print(items[1])
+                user = input("Approve or reject: ").strip().lower()
+                if user == "approve" :
+                    self.vacation_update.update({items[1][0] : "Approved"})
+                    print("Request has been approved")
+                elif user == "reject" :
+                    self.vacation_update.update({items[1][0] : "Rejected"})
+                    print("Request has been rejected")
+                else :
+                    print("Invalid input")
+            elif items[2] in items :
+                print(items[2])
+                user = input("Approve or reject: ").strip().lower()
+                if user == "approve" :
+                    self.vacation_update.update({items[2][0] : "Approved"})
+                    print("Request has been approved")
+                elif user == "reject" :
+                    self.vacation_update.update({items[2][0] : "Rejected"})
+                    print("Request has been rejected")
+                else :
+                    print("Invalid input")
+            elif items[3] in items :
+                print(items[3])
+                user = input("Approve or reject: ").strip().lower()
+                if user == "approve" :
+                    self.vacation_update.update({items[3][0] : "Approved"})
+                    print("Request has been approved")
+                elif user == "reject" :
+                    self.vacation_update.update({items[3][0] : "Rejected"})
+                    print("Request has been rejected")
+                else :
+                    print("Invalid input")
+            elif items[4] in items :
+                print(items[4])
+                user = input("Approve or reject: ").strip().lower()
+                if user == "approve" :
+                    self.vacation_update.update({items[4][0] : "Approved"})
+                    print("Request has been approved")
+                elif user == "reject" :
+                    self.vacation_update.update({items[4][0] : "Rejected"})
+                    print("Request has been rejected")
+                else :
+                    print("Invalid input")
+            elif items[5] in items :
+                print(items[5])
+                user = input("Approve or reject: ").strip().lower()
+                if user == "approve" :
+                    self.vacation_update.update({items[5][0] : "Approved"})
+                    print("Request has been approved")
+                elif user == "reject" :
+                    self.vacation_update.update({items[5][0] : "Rejected"})
+                    print("Request has been rejected")
+                else :
+                    print("Invalid input")
+        elif user_name in self.employees :
+            print("Access Denied! You are an employee!")
+        else :
+            print("Username doesn't exist!")
+        
+    def approve_leav(self) :
+        user_name = input("Enter name: ").strip().title()
+        if user_name in self.managers :
+            items = list(self.request_leave.items())
+            if items[0] in items :
+                print(items[0])
+                user = input("Approve or reject: ").strip().lower()
+                if user == "approve" :
+                    self.leave_update.update({items[0][0] : "Approved"})
+                    print("Request has been approved")
+                elif user == "reject" :
+                    self.leave_update.update({items[0][0] : "Rejected"})
+                    print("Request has been rejected")
+                else :
+                    print("Invalid input")
+            elif items[1] in items :
+                print(items[1])
+                user = input("Approve or reject: ").strip().lower()
+                if user == "approve" :
+                    self.leave_update.update({items[1][0] : "Approved"})
+                    print("Request has been approved")
+                elif user == "reject" :
+                    self.leave_update.update({items[1][0] : "Rejected"})
+                    print("Request has been rejected")
+                else :
+                    print("Invalid input")
+            elif items[2] in items :
+                print(items[2])
+                user = input("Approve or reject: ").strip().lower()
+                if user == "approve" :
+                    self.leave_update.update({items[2][0] : "Approved"})
+                    print("Request has been approved")
+                elif user == "reject" :
+                    self.leave_update.update({items[2][0] : "Rejected"})
+                    print("Request has been rejected")
+                else :
+                    print("Invalid input")
+            elif items[3] in items :
+                print(items[3])
+                user = input("Approve or reject: ").strip().lower()
+                if user == "approve" :
+                    self.leave_update.update({items[3][0] : "Approved"})
+                    print("Request has been approved")
+                elif user == "reject" :
+                    self.leave_update.update({items[3][0] : "Rejected"})
+                    print("Request has been rejected")
+                else :
+                    print("Invalid input")
+            elif items[4] in items :
+                print(items[4])
+                user = input("Approve or reject: ").strip().lower()
+                if user == "approve" :
+                    self.leave_update.update({items[4][0] : "Approved"})
+                    print("Request has been approved")
+                elif user == "reject" :
+                    self.leave_update.update({items[4][0] : "Rejected"})
+                    print("Request has been rejected")
+                else :
+                    print("Invalid input")
+            elif items[5] in items :
+                print(items[5])
+                user = input("Approve or reject: ").strip().lower()
+                if user == "approve" :
+                    self.leave_update.update({items[5][0] : "Approved"})
+                    print("Request has been approved")
+                elif user == "reject" :
+                    self.leave_update.update({items[5][0] : "Rejected"})
+                    print("Request has been rejected")
+                else :
+                    print("Invalid input")
+        elif user_name in self.employees :
+            print("Access Denied! You are an employee!")
+        else :
+            print("Username doesn't exist!")
+
+    def approve_over(self) :
+        user_name = input("Enter name: ").strip().title()
+        if user_name in self.managers :
+            items = list(self.request_overtime.items())
+            if items[0] in items :
+                print(items[0])
+                user = input("Approve or reject: ").strip().lower()
+                if user == "approve" :
+                    self.overtime_update.update({items[0][0] : "Approved"})
+                    print("Request has been approved")
+                elif user == "reject" :
+                    self.overtime_update.update({items[1][0] : "Rejected"})
+                    print("Request has been rejected")
+                else :
+                    print("Invalid input")
+            elif items[1] in items :
+                print(items[1])
+                user = input("Approve or reject: ").strip().lower()
+                if user == "approve" :
+                    self.overtime_update.update({items[1][0] : "Approved"})
+                    print("Request has been approved")
+                elif user == "reject" :
+                    self.overtime_update.update({items[1][0] : "Rejected"})
+                    print("Request has been rejected")
+                else :
+                    print("Invalid input")
+            elif items[2] in items :
+                print(items[2])
+                user = input("Approve or reject: ").strip().lower()
+                if user == "approve" :
+                    self.overtime_update.update({items[2][0] : "Approved"})
+                    print("Request has been approved")
+                elif user == "reject" :
+                    self.overtime_update.update({items[2][0] : "Rejected"})
+                    print("Request has been rejected")
+                else :
+                    print("Invalid input")
+            elif items[3] in items :
+                print(items[3])
+                user = input("Approve or reject: ").strip().lower()
+                if user == "approve" :
+                    self.overtime_update.update({items[3][0] : "Approved"})
+                    print("Request has been approved")
+                elif user == "reject" :
+                    self.overtime_update.update({items[3][0] : "Rejected"})
+                    print("Request has been rejected")
+                else :
+                    print("Invalid input")
+            elif items[4] in items :
+                print(items[4])
+                user = input("Approve or reject: ").strip().lower()
+                if user == "approve" :
+                    self.overtime_update.update({items[4][0] : "Approved"})
+                    print("Request has been approved")
+                elif user == "reject" :
+                    self.overtime_update.update({items[4][0] : "Rejected"})
+                    print("Request has been rejected")
+                else :
+                    print("Invalid input")
+            elif items[5] in items :
+                print(items[5])
+                user = input("Approve or reject: ").strip().lower()
+                if user == "approve" :
+                    self.overtime_update.update({items[5][0] : "Approved"})
+                    print("Request has been approved")
+                elif user == "reject" :
+                    self.overtime_update.update({items[5][0] : "Rejected"})
+                    print("Request has been rejected")
+                else :
+                    print("Invalid input")
+        elif user_name in self.employees :
+            print("Access Denied! You are an employee!")
+        else :
+            print("Username doesn't exist!")
+
+    def check_vacation_update(self) :
+        user_name = input("Enter name: ").strip().title()
+        if user_name in self.employees or user_name in self.managers :
+            print(self.vacation_update)
+        else :
+            print("Username doesn't exist")
+        
+    def check_leave_update(self) :
+        user_name = input("Enter name: ").strip().title()
+        if user_name in self.employees or user_name in self.managers :
+            print(self.leave_update)
+        else :
+            print("Username doesn't exist")
+    
+    def check_overtime_update(self) :
+        user_name = input("Enter name: ").strip().title()
+        if user_name in self.employees or user_name in self.managers :
+            print(self.overtime_update)
+        else :
+            print("Username doesn't exist")
+
+p1 = Hr()
+while True :
+    print("Enter 1 to login")
+    print("Enter 2 to apply for vacation")
+    print("Enter 3 to apply for leave")
+    print("Enter 4 to apply for overtime")
+    print("Enter 5 to approve or reject vacation requests")
+    print("Enter 6 to approve or reject leave requests")
+    print("Enter 7 to approve or reject overtime requests")
+    print("Enter 8 to check vacation update")
+    print("Enter 9 to check leave update")
+    print("Enter 10 to check overtime update")
+    print("Enter 11 to log out")
+    user = input("Enter choice: ").strip()
+    if user == "1" :
+        p1.login()
+    elif user == "2" :
+        p1.request_vac() 
+    elif user == "3" :
+        p1.request_leav()
+    elif user == "4" :
+        p1.request_over()
+    elif user == "5" :
+        p1.approve_vac()
+    elif user == "6" :
+        p1.approve_leav()
+    elif user == "7" :
+        p1.approve_over()
+    elif user == "8" :
+        p1.check_vacation_update()
+    elif user == "9" :
+        p1.check_leave_update()
+    elif user == "10" :
+        p1.check_overtime_update()
+    elif user == "11" :
+        break
+    else :
+        print("Invalid command!")
+ 
+    
+        
+    
+
+
